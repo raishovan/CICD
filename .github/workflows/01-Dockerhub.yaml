@@ -1,6 +1,6 @@
 name: 01 Push to Dockerhub
 
-on: [push]
+on: push
   branches:
     - master
     - Test
