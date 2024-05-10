@@ -5,8 +5,6 @@ on:
     branches:
       - master
       - Test
-    paths:
-      - 'CICD/frontend/**'
 
 env:
   APP_NAME: forntend_dockerhub
@@ -21,12 +19,12 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build and push Docker image
-        uses: mr-smithers-excellent/docker-build-push@v4
+        uses: mr-smithers-excellent/docker-build-push@v6
         with:
           image: ${{ secrets.DOCKER_USERNAME }}/${{ env.APP_NAME }}-${{ env.SERVICE }}
           tag: ${{ github.run_number }}
           registry: docker.io
-          directory: my-app/${{ env.SERVICE }}
-          dockerfile: my-app/${{ env.SERVICE }}/Dockerfile
+          directory: CICD/${{ env.SERVICE }}
+          dockerfile: CICD/${{ env.SERVICE }}/Dockerfile
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWD }}
