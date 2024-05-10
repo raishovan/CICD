@@ -1,8 +1,9 @@
 name: 01 Push to Dockerhub
-on: [push]
-  branches:
-    - master
-    - Test
+on: 
+  push:
+    branches:
+      - master
+      - Test
   paths:
     - 'CICD/frontend/**'
 
