@@ -1,8 +1,10 @@
 name: 01 Push to Dockerhub
-on: 
+on:
+  workflow_dispatch:
   push:
     branches:
       - master
+      - Test
   paths:
     - 'CICD/frontend/**'
 
