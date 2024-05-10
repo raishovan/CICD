@@ -5,8 +5,8 @@ on:
     branches:
       - master
       - Test
-paths:
-    - 'CICD/frontend/**'
+    paths:
+      - 'CICD/frontend/**'
 
 env:
   APP_NAME: forntend_dockerhub
