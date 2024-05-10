@@ -3,9 +3,9 @@ name: 01 Push to Dockerhub
 on:
   push:
     branches:
-      - master
-      - Test
-  paths:
+      -'master'
+      - 'Test'
+paths:
     - 'CICD/frontend/**'
 
 env:
@@ -30,5 +30,3 @@ jobs:
           dockerfile: my-app/${{ env.SERVICE }}/Dockerfile
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWD }}
-
-
