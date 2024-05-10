@@ -24,7 +24,7 @@ jobs:
           image: ${{ secrets.DOCKER_USERNAME }}/${{ env.APP_NAME }}-${{ env.SERVICE }}
           tag: ${{ github.run_number }}
           registry: docker.io
-          directory: CICD/${{ env.SERVICE }}
+          directory: CICD/${{ env.SERVICE }}/
           dockerfile: CICD/${{ env.SERVICE }}
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWD }}
