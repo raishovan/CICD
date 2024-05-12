@@ -1,10 +1,9 @@
 name: 01 Push to Dockerhub
-on: 
+
+on:
   push:
     branches:
-      - master
-  paths:
-    - 'CICD/frontend/**'
+      - Test
 
 env:
   APP_NAME: forntend_dockerhub
@@ -24,9 +23,7 @@ jobs:
           image: ${{ secrets.DOCKER_USERNAME }}/${{ env.APP_NAME }}-${{ env.SERVICE }}
           tag: ${{ github.run_number }}
           registry: docker.io
-          directory: my-app/${{ env.SERVICE }}
-          dockerfile: my-app/${{ env.SERVICE }}/Dockerfile
+          directory: ${{ env.SERVICE }}
+          dockerfile: ${{ env.SERVICE }}/Dockerfile
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWD }}
-
-
