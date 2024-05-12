@@ -24,7 +24,7 @@ jobs:
       - name: Build and push Docker image
         uses: mr-smithers-excellent/docker-build-push@v4
         with:
-          image: ${{ secrets.DOCKER_USERNAME }}/${{ env.APP_NAME }}/${{env.BRANCH_NAME}}-${{ env.SERVICE }}
+          image: ${{ secrets.DOCKER_USERNAME }}/${{ env.APP_NAME }}/-${{ env.SERVICE }}/${{env.BRANCH_NAME}}
           tag: ${{ github.run_number }}
           registry: docker.io
           directory: ${{ env.SERVICE }}
