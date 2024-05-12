@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - Test
+  pull_request:
+      - master
 
 env:
   APP_NAME: forntend_dockerhub
@@ -20,7 +22,7 @@ jobs:
       - name: Build and push Docker image
         uses: mr-smithers-excellent/docker-build-push@v4
         with:
-          image: ${{ secrets.DOCKER_USERNAME }}/${{ env.APP_NAME }}-${{ env.SERVICE }}
+          image: ${{ secrets.DOCKER_USERNAME }}/${{ env.APP_NAME }}/${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}-${{ env.SERVICE }}
           tag: ${{ github.run_number }}
           registry: docker.io
           directory: ${{ env.SERVICE }}
