@@ -5,6 +5,7 @@ on:
     branches:
       - Test
   pull_request:
+    branches:
       - master
 
 env:
