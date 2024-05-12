@@ -1,4 +1,4 @@
-name: 01 Push to Dockerhub
+name: 01 Build and deploy my-app-frontend image
 
 on:
   push:

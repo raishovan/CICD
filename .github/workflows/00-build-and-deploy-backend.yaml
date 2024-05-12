@@ -1,13 +1,14 @@
-name: 02-Build & deploy my-app-backend image
+name: 02 Build & deploy my-app-backend image
 
 on:
   push:
     branches:
-      - main
       - dev
+      - master
   pull_request:
-    -master
-    -dev
+    branches:
+      - master
+      - dev
 
 env:
   APP_NAME: backend_dockerhub # This value was modified by the initial-setup python script
