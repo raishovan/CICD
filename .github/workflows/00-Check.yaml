@@ -8,6 +8,11 @@ on:
   pull_request:
     branches:
       - master
+on: 
+  push:
+    branches:
+      - master
+      - Test
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
