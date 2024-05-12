@@ -1,4 +1,4 @@
-name: 01 Build and deploy my-app-frontend image
+name: 02 Build & deploy my-app-backend image
 
 on:
   push:
@@ -11,8 +11,8 @@ on:
       - dev
 
 env:
-  APP_NAME: forntend_dockerhub
-  SERVICE: frontend
+  APP_NAME: backend_dockerhub # This value was modified by the initial-setup python script
+  SERVICE: backend
   BRANCH_NAME: ${{ github.head_ref || github.ref_name }} 
 
 jobs:
@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
       - name: Build and push Docker image
         uses: mr-smithers-excellent/docker-build-push@v4
