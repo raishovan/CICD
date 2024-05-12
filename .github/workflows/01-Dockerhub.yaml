@@ -3,12 +3,15 @@ name: 01 Push to Dockerhub
 on:
   push:
     branches:
+      - dev
+  pull_request:
+    branches:
       - master
-      - Test
 
 env:
   APP_NAME: forntend_dockerhub
   SERVICE: frontend
+  BRANCH_NAME: ${{ github.head_ref || github.ref_name }} 
 
 jobs:
   build-and-push:
@@ -21,7 +24,7 @@ jobs:
       - name: Build and push Docker image
         uses: mr-smithers-excellent/docker-build-push@v4
         with:
-          image: ${{ secrets.DOCKER_USERNAME }}/${{ env.APP_NAME }}-${{ env.SERVICE }}
+          image: ${{ secrets.DOCKER_USERNAME }}/${{ env.APP_NAME }}-${{ env.SERVICE }}-${{env.BRANCH_NAME}}
           tag: ${{ github.run_number }}
           registry: docker.io
           directory: ${{ env.SERVICE }}
