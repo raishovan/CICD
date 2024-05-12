@@ -3,7 +3,7 @@ name: 01 Push to Dockerhub
 on:
   push:
     branches:
-      - Test
+      - dev
   pull_request:
     branches:
       - master
