@@ -8,6 +8,8 @@ on:
   pull_request:
     branches:
       - master
+      - dev
+
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
