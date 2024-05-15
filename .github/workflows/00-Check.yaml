@@ -1,5 +1,4 @@
 name: GitHub Actions Demo
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 
 on:
   push:
@@ -26,6 +25,7 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+name: 01 Build and deploy my-app-frontend image
   
   #Login-to-AWS:
     #uses: aws-actions/configure-aws-credentioals@v1
