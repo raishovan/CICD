@@ -27,8 +27,7 @@ jobs:
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
   
-  Login to AWS:
-    name: Configure AWS Credentials
+  Login-to-AWS:
     uses: aws-actions/configure-aws-credentioals@v1
     with:
       aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
