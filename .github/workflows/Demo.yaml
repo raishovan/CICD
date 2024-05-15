@@ -1,6 +1,6 @@
 name: GitHub-Demo
 #run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-
+# Try running this workflow in master to check workflow_run
 on:
   push:
     branches:
