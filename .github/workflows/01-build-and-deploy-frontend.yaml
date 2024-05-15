@@ -1,15 +1,10 @@
 name: 01 Build and deploy my-app-frontend image
 
 on:
-  push:
-    branches:
-      - dev
-      - master
-  pull_request:
-    branches:
-      - master
-      - dev
-
+  workflow_run:
+    workflows: [Github Actions Demo]
+    types:
+      -completed
 env:
   APP_NAME: forntend_dockerhub
   SERVICE: frontend
