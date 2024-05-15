@@ -2,7 +2,10 @@ name: 02 Build & deploy my-app-backend image
 
 on:
   workflow_run:
-    workflows: ["01 Build and deploy my-app-frontend image"]
+    workflows: ["Github Actions Demo"]
+    branches:
+      -dev
+      -master
     types:
       -completed
 
