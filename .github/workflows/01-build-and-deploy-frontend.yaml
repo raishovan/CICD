@@ -3,10 +3,8 @@ name: 01 Build and deploy my-app-frontend image
 on:
   workflow_run:
     workflows: [GitHub-Demo]
-    branches:
-      -dev
-      -master
-    types: [completed]
+    types:
+      -completed
 
 env:
   APP_NAME: forntend_dockerhub
