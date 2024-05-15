@@ -5,6 +5,7 @@ on:
     workflows: [GitHub Actions Demo]
     types:
       -completed
+
 env:
   APP_NAME: forntend_dockerhub
   SERVICE: frontend
