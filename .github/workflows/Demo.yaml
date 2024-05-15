@@ -28,7 +28,7 @@ jobs:
       - run: echo "🍏 This job's status is ${{ job.status }}."
   
   Login-to-AWS:
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
