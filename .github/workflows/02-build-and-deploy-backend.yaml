@@ -2,7 +2,8 @@ name: 02 Build & deploy my-app-backend image
 
 on:
   workflow_run:
-    workflows: ["Github Actions Demo"]
+    workflows:
+      - GitHub-Demo
     branches:
       -dev
       -master
