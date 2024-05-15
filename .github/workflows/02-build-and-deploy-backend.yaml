@@ -5,6 +5,7 @@ on:
     workflows: ["Github Actions Demo"]
     branches:
       -dev
+      -master
     types:
       -completed
 
